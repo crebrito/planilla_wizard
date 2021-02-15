@@ -12313,6 +12313,14 @@ label {
 .error .help-block {
   color: #f62d51; }
 
+/* select.required.form-control.custom-select.select2.error {
+  background: rgb(251, 227, 228);
+  border: 1px solid #fbc2c4; } */
+
+.wizard > .content > .body select.error {
+  background: rgb(251, 227, 228);
+  border: 1px solid #fbc2c4; }
+  
 .validate .form-control {
   border-color: #36bea6; }
 
