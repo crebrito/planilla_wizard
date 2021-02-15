@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <title>Planilla de Solicitud de Cupo</title>
+    <!-- Custom CSS -->
+    <link href="css/jquery.steps.css" rel="stylesheet" />
+    <link href="css/steps.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/fuentes.css" />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="card">
+                <div class="card-body wizard-content">
+                    <h4 class="card-title">Solicitud de Cupo</h4>
+                    <h6 class="card-subtitle"></h6>
+                    <form id="example-form" action="#" class="m-t-40">
+                        <div>
+                            <h3>Alumno</h3>
+                            <section>
+                                <div class="form-group">
+                                    <h5>Datos del Aspirante</h5>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="alumno">Nombre *</label>
+                                            <input id="alumno" name="alumno"
+                                                placeholder="Favor colocar nombres y apellidos completos" type="text"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="sexo">Sexo *</label>
+                                            <select name="sexo" id="sexo" class="required form-control custom-select select2">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="nivel">Nivel a Cursar *</label>
+                                            <select name="nivel" id="nivel" class="required form-control custom-select select2">
+                                                <option value="">Seleccionar</option>
+                                                <!-- <option value="Pre-Maternal">Pre-Maternal</option> -->
+                                                <option value="Maternal">Maternal</option>
+                                                <option value="Pre-Kinder">Pre-Kinder</option>
+                                                <option value="Kinder">Kinder</option>
+                                                <option value="Preparatorio">Preparatorio</option>
+                                                <option value="1er. Grado">1er. Grado</option>
+                                                <option value="2do. Grado">2do. Grado</option>
+                                                <option value="3er. Grado">3er. Grado</option>
+                                                <option value="4to. Grado">4to. Grado</option>
+                                                <option value="5to. Grado">5to. Grado</option>
+                                                <option value="6to. Grado">6to. Grado</option>
+                                                <option value="1er. Año de Bachillerato">
+                                                    1er. Año de Bachillerato
+                                                </option>
+                                                <option value="2do. Año de Bachillerato">
+                                                    2do. Año de Bachillerato
+                                                </option>
+                                                <option value="3er. Año de Bachillerato">
+                                                    3er. Año de Bachillerato
+                                                </option>
+                                                <option value="4to. Año de Bachillerato">
+                                                    4to. Año de Bachillerato
+                                                </option>
+                                                <option value="5to. Año de Bachillerato">5to. Año de Bachillerato
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
+                                            <input type="text" name="fecha_nacimiento" id="fecha_nacimiento"
+                                                class="form-control date-inputmask" required />
+                                        </div>
+                                        <div class="col-md-7">
+
+                                            <label for="lugar_nacimiento">Lugar de Nacimiento *</label>
+                                            <input id="lugar_nacimiento" name="lugar_nacimiento" type="text"
+                                                class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="hermanos">Número de hermanos *</label>
+                                            <input type="text" name="hermanos" id="hermanos" class="form-control"
+                                                required/>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="lugar_hermanos">Lugar entre los hermanos *</label>
+                                            <input type="text" name="lugar_hermanos" id="lugar_hermanos"
+                                                class="form-control" required />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="componentes">¿Cuántos componen el grupo familiar? *</label>
+                                            <input type="text" name="componentes" id="componentes" class="form-control"
+                                                required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <label for="ciudades">Ciudades donde ha vivido *</label>
+                                            <input name="ciudades" type="text" id="ciudades" size="50"
+                                                class="form-control" required />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="alumno_telefono">Teléfono *</label>
+                                            <input name="alumno_telefono" type="text" id="alumno_telefono"
+                                                class="form-control phone-inputmask" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h5>Planteles donde ha cursado</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="plantel1">Plantel actual</label>
+                                            <input name="plantel1" type="text" id="plantel1" size="50"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="plantel1_anos">Años en el plantel</label>
+                                            <input type="text" name="plantel1_anos" id="plantel1_anos"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="plantel2">Plantel anterior</label>
+                                            <input name="plantel2" type="text" id="plantel2" size="50"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="plantel2_anos">Años en el plantel</label>
+                                            <input type="text" name="plantel2_anos" id="plantel2_anos"
+                                                class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>(*) Campo obligatorio</p>
+                            </section>
+                            <h3>Madre</h3>
+                            <section>
+                                <div class="form-group">
+                                    <h5>Datos de la Madre</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="madre_nombre">Nombre *</label>
+                                            <input name="madre_nombre" type="text" id="madre_nombre" size="50"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="madre_cedula">Cédula *</label>
+                                            <input name="madre_cedula" type="text" id="madre_cedula"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="madre_edad">Edad *</label>
+                                            <input name="madre_edad" type="text" id="madre_edad"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="madre_estado_civil">Estado Civil *</label>
+                                            <select name="madre_estado_civil" id="madre_estado_civil"
+                                                class="required select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Casada">Casada</option>
+                                                <option value="Divorciada">Divorciada</option>
+                                                <option value="Soltera">Soltera</option>
+                                                <option value="Viuda">Viuda</option>
+                                                <option value="Concubina">Concubina</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="madre_email">Email *</label>
+                                            <input name="madre_email" type="text" id="madre_email"
+                                                class="required email form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="madre_direccion">Dirección *</label>
+                                            <input name="madre_direccion" type="text" id="madre_direccion"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="madre_telefono">Teléfono *</label>
+                                            <input name="madre_telefono" type="text" id="madre_telefono"
+                                                class="required phone-inputmask form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="madre_profesion">Profesión *</label>
+                                            <input name="madre_profesion" type="text" id="madre_profesion"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="madre_cargo">Cargo *</label>
+                                            <input name="madre_cargo" type="text" id="madre_cargo"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="madre_empresa">Empresa donde trabaja *</label>
+                                            <input name="madre_empresa" type="text" id="madre_empresa"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="madre_telefono_oficina">Teléfono oficina *</label>
+                                            <input name="madre_telefono_oficina" type="text" id="madre_telefono_oficina"
+                                                class="required phone-inputmask form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="madre_grupo1">Representante o Trabajadora del Colegio </label>
+                                            <select name="madre_grupo1" id="madre_grupo1"
+                                                class="select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="madre_exalumna">Egresada del I.E. Juan XXIII</label>
+                                            <select name="madre_exalumna" id="madre_exalumna"
+                                                class="select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="madre_ano">Año de graduación </label>
+                                            <input name="madre_ano" type="text" id="madre_ano" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>(*) Campo obligatorio</p>
+                            </section>
+                            <h3>Padre</h3>
+                            <section>
+                                <div class="form-group">
+                                    <h5>Datos del Padre</h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="padre_nombre">Nombre *</label>
+                                            <input name="padre_nombre" type="text" id="padre_nombre" size="50"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="padre_cedula">Cédula *</label>
+                                            <input name="padre_cedula" type="text" id="padre_cedula"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="padre_edad">Edad *</label>
+                                            <input name="padre_edad" type="text" id="padre_edad"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="padre_estado_civil">Estado Civil *</label>
+                                            <select name="padre_estado_civil" id="padre_estado_civil"
+                                                class="required select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Casado">Casado</option>
+                                                <option value="Divorciado">Divorciado</option>
+                                                <option value="Soltero">Soltero</option>
+                                                <option value="Viudo">Viudo</option>
+                                                <option value="Concubino">Concubino</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="padre_email">Email *</label>
+                                            <input name="padre_email" type="text" id="padre_email"
+                                                class="required email form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="padre_direccion">Dirección *</label>
+                                            <input name="padre_direccion" type="text" id="padre_direccion"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="padre_telefono">Teléfono *</label>
+                                            <input name="padre_telefono" type="text" id="padre_telefono"
+                                                class="required phone-inputmask form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="padre_profesion">Profesión *</label>
+                                            <input name="padre_profesion" type="text" id="padre_profesion"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="padre_cargo">Cargo *</label>
+                                            <input name="padre_cargo" type="text" id="padre_cargo"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="padre_empresa">Empresa donde trabaja *</label>
+                                            <input name="padre_empresa" type="text" id="padre_empresa"
+                                                class="required form-control" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="padre_telefono_oficina">Teléfono oficina *</label>
+                                            <input name="padre_telefono_oficina" type="text" id="padre_telefono_oficina"
+                                                class="required phone-inputmask form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="padre_grupo1">Representante o Trabajador del Colegio </label>
+                                            <select name="padre_grupo1" id="padre_grupo1"
+                                                class="select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label for="padre_exalumno" class="text-center">Egresado del I.E. Juan
+                                                XXIII</label>
+                                            <select name="padre_exalumno" id="padre_exalumno"
+                                                class="select2 form-control custom-select">
+                                                <option value="">Seleccionar</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="padre_ano" class="text-center">Año de graduación </label>
+                                            <input name="padre_ano" type="text" id="padre_ano" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>(*) Campo obligatorio</p>
+                            </section>
+                            <h3>Otros</h3>
+                            <section>
+                                <div class="form-group">
+                                    <h5>PERSONAS DE REFERENCIA (Representantes actuales de nuestro instituto)</h5>
+
+                                    <h6>Referencia #1</h6>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="referencia_nombre1">Nombre *</label>
+                                            <input type="text" name="referencia_nombre1" id="referencia_nombre1"
+                                                class="form-control required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_telefono1">Teléfono *</label>
+                                            <input type="text" name="referencia_telefono1" id="referencia_telefono1"
+                                                class="form-control phone-inputmask required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="referencia_email1">Email *</label>
+                                            <input type="text" name="referencia_email1" id="referencia_email1"
+                                                class="form-control email required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_representante1">Código *</label>
+                                            <input name="referencia_representante1" type="text"
+                                                id="referencia_representante1" class="form-control required" />
+                                        </div>
+                                    </div>
+                                    <h6>Referencia #2</h6>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="referencia_nombre2">Nombre *</label>
+                                            <input type="text" name="referencia_nombre2" id="referencia_nombre2"
+                                                class="form-control required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_telefono2">Teléfono *</label>
+                                            <input type="text" name="referencia_telefono2" id="referencia_telefono2"
+                                                class="form-control phone-inputmask required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="referencia_email2">Email *</label>
+                                            <input type="text" name="referencia_email2" id="referencia_email2"
+                                                class="form-control email required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_representante2">Código *</label>
+                                            <input name="referencia_representante2" type="text"
+                                                id="referencia_representante2" class="form-control required" />
+                                        </div>
+                                    </div>
+                                    <h6>Referencia #3</h6>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="referencia_nombre3">Nombre *</label>
+                                            <input type="text" name="referencia_nombre3" id="referencia_nombre3"
+                                                class="form-control required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_telefono3">Teléfono *</label>
+                                            <input type="text" name="referencia_telefono3" id="referencia_telefono3"
+                                                class="form-control phone-inputmask required" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="referencia_email3">Email *</label>
+                                            <input type="text" name="referencia_email3" id="referencia_email3"
+                                                class="form-control email required" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="referencia_representante3">Código *</label>
+                                            <input name="referencia_representante3" type="text"
+                                                id="referencia_representante3" class="form-control required" />
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <label for="otros_cupos">Si solicita cupo para otro hermano, indique nombre(s) y
+                                        grado(s)</label>
+                                    <input name="otros_cupos" type="text" id="otros_cupos" size="50"
+                                        class="form-control" />
+
+                                    <label for="otros_contactos">Nombre de familiares en la institución</label>
+                                    <input name="otros_contactos" type="text" id="otros_contactos" size="50"
+                                        class="form-control" />
+                                    <p>(*) Campo obligatorio</p>
+                                    <p></p>
+                                    <p>IMPORTANTE:</p>
+                                    <ul>
+                                        <li>No se procesará esta solicitud si está incompleta.</li>
+                                        <li>Debe tomarse en cuenta que esta planilla es sólo una solicitud y NO ASEGURA
+                                            CUPO O INSCRIPCIÓN</li>
+                                        <li>PARA LE ENTREVISTA DEBE TRAER TODOS LOS RECAUDOS EXIGIDOS</li>
+                                    </ul>
+                                    <p>
+                                        La solicitud debe ir acompañada de la <strong>fotocopia legible</strong> de los
+                                        documentos señalados a continuación.</p>
+                                    <p class="text-danger">La entrega de recaudos será en la sede de Bachillerato en
+                                        CARPETA MANILA. Únicamente para alumnos pre-asignados.</p>
+                                    <p></p><strong>Requisitos:</strong></p>
+                                    <ul>
+                                        <li>Planilla de Solicitud de Cupo. <strong>La planilla de Solicitud de Cupos
+                                                solo podrá ser impresa cuando su estatus cambie a "Consignar
+                                                Documentos". Recuerde adjuntar el boletín de notas.</strong> </li>
+                                        <li>Planilla de Inventario de Valores.</li>
+                                        <li>Planilla de Anamnesis para solicitudes hasta 5to. grado.</li>
+                                        <li>Partida de nacimiento original y copia (todos los niveles).</li>
+                                        <li>2 Fotocopias ampliadas de la Cédula de identidad del estudiante (si la
+                                            posee) </li>
+                                        <li>Fotocopia de la Cedula de Identidad del padre y la madre</li>
+                                        <li>Biografía del estudiante.</li>
+                                        <li>1 fotografía tipo carnet del estudiante, de la madre y del padre.</li>
+                                        <li>Boletas del año anterior y/o Notas Certificadas</li>
+                                        <li>Fotocopia del Boletín de notas del presente año escolar.</li>
+                                        <li>Fotocopia de los Boletines descriptivos del presente año escolar.</li>
+                                        <li>Para solicitudes de Maternal a Pre-Kinder, se debe entregar informe de niño
+                                            sano otorgado por su pediatra.
+                                            Además, del informe de vacunas al día, según su edad y autorización del
+                                            pediatra para iniciar escolaridad.</li>
+                                        <li>Los estudiantes de Pre-Kinder a Preparatorio deben entregar evaluación
+                                            psicopedagógica.<strong> (Sin excepción, al día de presentar la carpeta con
+                                                los requisitos).</strong></li>
+                                        <li>Los estudiantes de 1er. grado a 4to. año deben entregar evaluación
+                                            psicológica <strong>(Sin excepción al día de presentar la carpeta con los
+                                                requisitos).</strong></li>
+                                        <li>Tres (3) Cartas de Referencias Personales de Representantes Actuales.</li>
+                                        <li>Solvencia Administrativa de la anterior institución educativa. Si es
+                                            representante de nuestro colegio, deberá solicitarla a su respectiva
+                                            Analista de Cobranza a través de cobranza@juanxxiii.e12.ve.</li>
+                                        <li>Si es Egresado de nuestro colegio, debe consignar Fotocopia del Título de
+                                            Bachiller.</li>
+                                    </ul>
+                                    <strong>Para formalizar la inscripción debe consignar obligatoriamente:</strong>
+                                    <ol>
+                                        <li>Carta de Promoción con membrete del Ministerio de Educación hasta 1er.
+                                            año, que debe solicitar en el colegio de procedencia al culminar su año
+                                            escolar.</li>
+                                        <li>Notas Certificadas (desde 1er Año a 4to año), que incluyan las notas
+                                            definitivas del año
+                                            escolar en curso.</li>
+                                    </ol>
+
+                                    <p><a href="https://juanxxiii.e12.ve/home/manual-de-convivencia" target="_blank">Léa
+                                            nuestro Manual de Convivencia</a></p>
+
+
+
+
+
+
+                                    <input id="manual_convivencia" name="manual_convivencia" type="checkbox"
+                                        class="required" />
+                                    <label for="manual_convivencia">He leído en su totalidad el Manual de Convivencia y
+                                        declaro
+                                        estar de acuerdo con lo convenido en el mismo.</label>
+                                </div>
+                            </section>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="js/jquery.steps.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/localization/messages_es.js"></script>
+    <script src="js/jquery.inputmask.bundle.min.js"></script>
+    <script src="js/mask.init.js"></script>
+    <script>
+        // Basic Example with form
+        var form = $("#example-form");
+        form.validate({
+            errorPlacement: function errorPlacement(error, element) {
+                element.after(error);
+            },
+            rules: {
+                confirm: {
+                    equalTo: "#password",
+                },
+                hermanos: {
+                    number : true,
+                    required : true
+                },
+                lugar_hermanos: {
+                    number : true,
+                    required : true
+                },
+                componentes: {
+                    number : true,
+                    required : true
+                },
+                fecha_nacimiento: {
+                    date: true,
+                    required: true
+                }                                
+            },
+        });
+        form.children("div").steps({
+            headerTag: "h3",
+            bodyTag: "section",
+            transitionEffect: "none",
+            onStepChanging: function (event, currentIndex, newIndex) {
+                form.validate().settings.ignore = ":disabled,:hidden";
+                return form.valid();
+                // return true;
+            },
+            onFinishing: function (event, currentIndex) {
+                form.validate().settings.ignore = ":disabled";
+                return form.valid();
+            },
+            onFinished: function (event, currentIndex) {
+                alert("Submitted!");
+            },
+            labels: {
+                cancel: "Cancelar",
+                current: "current step:",
+                pagination: "Pagination",
+                finish: "Terminar",
+                next: "Siguiente",
+                previous: "Atrás",
+                loading: "Cargando ...",
+            },
+        });
+    </script>
+</body>
+
+</html>
