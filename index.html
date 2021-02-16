@@ -64,7 +64,8 @@
                                         </div>
                                         <div class="col-md-3">
                                             <label for="sexo">Sexo *</label>
-                                            <select name="sexo" id="sexo" class="required form-control custom-select select2">
+                                            <select name="sexo" id="sexo"
+                                                class="required form-control custom-select select2">
                                                 <option value="">Seleccionar</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
@@ -72,7 +73,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="nivel">Nivel a Cursar *</label>
-                                            <select name="nivel" id="nivel" class="required form-control custom-select select2">
+                                            <select name="nivel" id="nivel"
+                                                class="required form-control custom-select select2">
                                                 <option value="">Seleccionar</option>
                                                 <!-- <option value="Pre-Maternal">Pre-Maternal</option> -->
                                                 <option value="Maternal">Maternal</option>
@@ -119,7 +121,7 @@
                                         <div class="col-md-3">
                                             <label for="hermanos">Número de hermanos *</label>
                                             <input type="text" name="hermanos" id="hermanos" class="form-control"
-                                                required/>
+                                                required />
                                         </div>
                                         <div class="col-md-4">
                                             <label for="lugar_hermanos">Lugar entre los hermanos *</label>
@@ -576,29 +578,29 @@
                     equalTo: "#password",
                 },
                 hermanos: {
-                    number : true,
-                    required : true
+                    number: true,
+                    required: true
                 },
                 lugar_hermanos: {
-                    number : true,
-                    required : true
+                    number: true,
+                    required: true
                 },
                 componentes: {
-                    number : true,
-                    required : true
+                    number: true,
+                    required: true
                 },
                 fecha_nacimiento: {
                     date: true,
                     required: true
                 },
                 madre_edad: {
-                    number : true,
-                    required : true
+                    number: true,
+                    required: true
                 },
                 padre_edad: {
-                    number : true,
-                    required : true
-                }                               
+                    number: true,
+                    required: true
+                }
             },
         });
         form.children("div").steps({
